@@ -9,8 +9,10 @@ bot.on("ready", () => {
 })
 
 bot.on("message", message => {
-    if(Audio.match(message)) {
-        Audio.play(message);
+    if(Audio.match(message) && Audio.hasUrl(message)) {
+        Audio.playFromUrl(message);
+    } else {
+        Audio.playFromWords(message);
     }
 })
 

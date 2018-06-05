@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2",
+    "googleapis": "^31.0.2",
     "node-opus": "^0.3.0",
     "youtube-audio-stream": "^0.2.0"
   }
