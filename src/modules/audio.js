@@ -16,9 +16,9 @@ module.exports = class Audio {
     }
 
     static playFromUrl(message) {
+        let args = message.content.split(" ");
         let voiceChannel = this.currentChannel(message);
 
-        let args = message.content.split(" ");
         if (args[1]) {
             voiceChannel
                 .join()
@@ -32,12 +32,11 @@ module.exports = class Audio {
                             }
                         })
                         let stream = YoutubeStream(args[1]);
-                        console.log("")
                         connection.playStream(stream).on('end', () => {
                             connection.disconnect();
                         })
                     } catch (e) {
-                        message.channel.send("NTM TA VIDEO EST PAS DISPO")
+                        message.channel.send("WOLA YA EU UN PROBLEME JSE PO C KOA");
                         console.log(e);
                     }
                 })
