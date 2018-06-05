@@ -47,29 +47,29 @@ module.exports = class Audio {
         }
     }
 
-    // static playFromWords(message) {
-    //     let voiceChannel = this.currentChannel(message);
+    static playFromWords(message) {
+        // let voiceChannel = this.currentChannel(message);
 
-    //     let args = message.content.split(" ");
+        // let args = message.content.split(" ");
         
-    //     let query = "";
-    //     args.splice(1, 0);
-    //     args.forEach(arg => {
-    //         query += arg;
-    //     })
+        // let query = "";
+        // args.splice(1, 0);
+        // args.forEach(arg => {
+        //     query += arg;
+        // })
 
-    //     youtube.search.list({
-    //         part: 'snippet',
-    //         q: query
-    //     }, (err, data) => {
-    //         if (err) {
-    //             console.error('Error: ' + err);
-    //         }
-    //         if (data) {
-    //             console.log(data)
-    //         }
-    //     });
-    // }
+        // youtube.search.list({
+        //     part: 'snippet',
+        //     q: query
+        // }, (err, data) => {
+        //     if (err) {
+        //         console.error('Error: ' + err);
+        //     }
+        //     if (data) {
+        //         console.log(data)
+        //     }
+        // });
+    }
 
     static currentChannel(message) {
         let channels = message.guild.channels.filter(channel => { return channel.type == 'voice' });
