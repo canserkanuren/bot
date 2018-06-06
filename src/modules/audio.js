@@ -33,7 +33,7 @@ module.exports = class Audio {
                         })
                         let stream = YoutubeStream(args[1]);
                         connection.playStream(stream).on('end', () => {
-                            connection.disconnect();
+                            // connection.disconnect();
                         })
                     } catch (e) {
                         message.channel.send("WOLA YA EU UN PROBLEME JSE PO C KOA");
@@ -58,8 +58,6 @@ module.exports = class Audio {
         this.searchVideoFromYoutube(query).then(data => {
             let videoUrl = "https://www.youtube.com/watch?v=" + data.id.videoId;
             let voiceChannel = this.currentChannel(message);
-            console.log(message.author.username != "music-bot");
-            console.log(message.author.username);
             if (videoUrl) {
                 if(message.author.username != "music-bot") {
                     voiceChannel
@@ -69,7 +67,7 @@ module.exports = class Audio {
                                 message.channel.send(":fast_forward: Now Playing : " + data.snippet.title);
                                 let stream = YoutubeStream(videoUrl);
                                 connection.playStream(stream).on('end', () => {
-                                    connection.disconnect();
+                                    // connection.disconnect();
                                 })
                             } catch (e) {
                                 message.channel.send("WOLA YA EU UN PROBLEME JSE PO C KOA");

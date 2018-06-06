@@ -9,10 +9,15 @@ bot.on("ready", () => {
 })
 
 bot.on("message", message => {
-    if(Audio.match(message) && Audio.hasUrl(message)) {
-        Audio.playFromUrl(message);
-    } else {
-        Audio.playFromWords(message);
+    if(message.author.username != "music-bot") {
+        if(Audio.match(message)) {
+            if(Audio.hasUrl(message)) {
+                Audio.playFromUrl(message);
+            } else {
+                Audio.playFromWords(message);
+            }  
+            
+        } 
     }
 })
 
